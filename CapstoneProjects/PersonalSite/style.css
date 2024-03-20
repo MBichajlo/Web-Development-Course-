@@ -1,0 +1,188 @@
+
+
+body{
+    margin: 0;
+    text-align: left;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, #00bfff, #d3475c, #a79a98);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* main page */
+.main-page{
+    margin-top: 0;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+.title-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2{
+  font-family: "Nobile", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 40px;
+  color: white;
+  font-style:normal;
+  margin-top: 0 ;
+  max-width: 512.5px;
+}
+.prof{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prof img{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: white solid 6px;
+}
+h1{
+  font-family: "Brygada 1918", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 100px;
+  color: white;
+  font-style:normal;
+  margin: 0;
+}
+
+/* detail  */
+.detail{
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 2fr 1fr ;
+}
+.links-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.link-btn{
+  /* border: white solid 2px; */
+  background-color: rgba(255, 255, 255, 0.189);
+  border-radius:5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-family: "Nobile",serif;
+}
+
+.aboutme{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutme h2{
+  font-size: 30px;
+  position: relative;
+  left: -20px;
+}
+/* skills */
+.skills-container{
+  height: 100vh;
+  gap:100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.skills-container p{
+  width: 40%;
+  font-family: "Nobile",serif;
+  color: white;
+  font-size: 30px;
+}
+.icons{
+  display: flex;
+  gap: 100px;
+}
+.icon{
+  height: 200px;
+
+}
+
+/* education */
+.education-container{
+  height: 100vh;
+  
+}
+
+
+.container{
+  height: 150px;
+  background-color: rgba(49, 117, 212, 0.469);
+  gap: 20px;
+  display: flex;
+  
+  align-items: center;
+}
+h3{
+  font-family: "Brygada 1918",serif;
+  color: white;
+  font-size: 20px;
+  margin: 30px;
+}
+@media (max-width: 900px) {
+  .main-page{
+    grid-template-columns: 1fr;
+  }
+  .prof{
+    order:-1;
+  }
+  .prof img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: white solid 6px;
+  }
+}
+
+.outside-links img{
+  height: 100px;
+}
+
+.chevron::before {
+	border-style: solid;
+	border-width: 0.10em 0.10em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	top: 0.15em;
+	transform: rotate(-45deg);
+	vertical-align: top;
+	width: 0.45em;
+  left: 0.25em;
+  transform: rotate(-135deg);
+  margin-right: 10px;
+}
