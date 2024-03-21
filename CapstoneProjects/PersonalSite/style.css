@@ -143,7 +143,7 @@ h1{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0px;
+  padding: 10px;
 }
 h3{
   font-family: "Brygada 1918",serif;
@@ -154,6 +154,9 @@ h3{
 @media (max-width: 900px) {
   .main-page{
     grid-template-columns: 1fr;
+  }
+  .title-text{
+    margin-left: 20px;
   }
   .prof{
     order:-1;
@@ -179,6 +182,13 @@ h3{
   .icon{
     height: 100px;
   
+  }
+  .icons{
+    margin-top: 50px;
+    gap: 20px;;
+  }
+  .outside-links{
+    display: flex;
   }
 }
 
