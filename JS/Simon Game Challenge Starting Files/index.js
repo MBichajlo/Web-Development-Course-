@@ -1,6 +1,9 @@
 var sequence = [];
+var playerSequence = [];
+
 var gameIsOn = false;
-currentLevel = 1;
+var currentLevel = 0;
+var j = 0;
 
 $(document).keydown(function (event) {
   if (event.key === "a") {
@@ -11,7 +14,24 @@ $(document).keydown(function (event) {
 });
 
 $(".btn").on("click", function (event) {
-  playElement($(event.target).attr("id"));
+  if (gameIsOn) {
+    playerSequence.push($(event.target).attr("id"));
+    if (j === currentLevel - 1 && playerSequence[j] === sequence[j]) {
+      playElement($(event.target).attr("id"));
+      nextLevel();
+      return;
+    }
+    if (playerSequence[j] === sequence[j]) {
+      playElement($(event.target).attr("id"));
+      j++;
+      return;
+    } else {
+      gameOver();
+      reset();
+
+      return;
+    }
+  }
 });
 
 function playElement(name) {
@@ -23,10 +43,19 @@ function playElement(name) {
     $("#" + name).removeClass("pressed");
   }, 200);
 }
+function reset() {
+  sequence = [];
+  playerSequence = [];
+  currentLevel = 0;
+  gameIsOn = false;
+  $("#level-title").text("Press A Key to Start");
+}
 
 function nextLevel() {
+  currentLevel++;
   $("#level-title").text("Level " + currentLevel);
-
+  playerSequence = [];
+  j = 0;
   setTimeout(function () {
     playElement(sequence[currentLevel - 1]);
   }, 1000);
@@ -54,4 +83,12 @@ function createSequence(n) {
         break;
     }
   }
+}
+
+function gameOver() {
+  audio = new Audio("./sounds/wrong.mp3");
+  $(".btn").addClass("game-over");
+  setTimeout(function () {
+    $(".btn").removeClass("game-over");
+  }, 300);
 }
