@@ -9,6 +9,9 @@ app.get("/", (req, res) => {
 app.get("/kurwa", (req, res) => {
   res.send("<p>sadwdasdadwsadwad</p>");
 });
+app.get("/aboutme", (req, res) => {
+  res.send("<p>zjeb</p>");
+});
 
 app.listen(port, () => {
   console.log(`Server up and running on port ${port}`);
