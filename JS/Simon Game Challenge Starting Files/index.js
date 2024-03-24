@@ -87,6 +87,7 @@ function createSequence(n) {
 
 function gameOver() {
   audio = new Audio("./sounds/wrong.mp3");
+  audio.play();
   $(".btn").addClass("game-over");
   setTimeout(function () {
     $(".btn").removeClass("game-over");
